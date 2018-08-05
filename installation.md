@@ -16,6 +16,9 @@ If this is not working try following in Anaconda Prompt:
 
 for more details ee [Stack Overflow discussion](https://stackoverflow.com/questions/35802939/install-only-available-packages-using-conda-install-yes-file-requirements-t/)
 
+#### Text editor
+You can use [Notepad++](https://notepad-plus-plus.org/download/v7.5.8.html), [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) or other text editor of your choice.
+
 ### Linux, Mac OS
 
 #### Python
@@ -29,6 +32,9 @@ for more details ee [Stack Overflow discussion](https://stackoverflow.com/questi
 #### Python libraries
 
 `pip3 install -r requirements.txt`
+
+#### Text editor
+You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) or other text editor of your choice.
 
 ## Testing installation
 
