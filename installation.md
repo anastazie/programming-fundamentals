@@ -4,20 +4,23 @@
 
 ### Windows
 
-#### Python
-
-1. Install Python via [`anaconda`](https://www.anaconda.com/download/).
-1. Install GitBash using following command Anaconda prompt: `conda install git`
-
-#### Python libraries
-1. Install dependencies located in `requirements.txt` using following command in GitBash: `while read requirement; do conda install --yes $requirement || pip3 install $requirement; done < requirements.txt`
-If this is not working try following in Anaconda Prompt:
-`python -m pip install -r requirements.txt`
-
-for more details ee [Stack Overflow discussion](https://stackoverflow.com/questions/35802939/install-only-available-packages-using-conda-install-yes-file-requirements-t/)
-
 #### Text editor
 You can use [Notepad++](https://notepad-plus-plus.org/download/v7.5.8.html), [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) or other text editor of your choice.
+
+#### GitBash
+
+This tool emulates UNIX terminal.
+1. Download [Git for Windows](https://gitforwindows.org).
+2. Install using default options, except for one step
+    - In step  "Choosing the default editor for Git" select "Use Notepad++ as default Git's editor"
+
+#### Python
+
+1. Install Python via [Python download site](https://www.python.org/downloads/).
+    - **Double check that Python is added to the PATH environmental variable**
+
+#### Python libraries
+1. Install dependencies located in `requirements.txt` using following command in GitBash: `pip3 install -r requirements.txt`
 
 ### Linux, Mac OS
 
