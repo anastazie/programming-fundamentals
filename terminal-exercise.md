@@ -3,7 +3,7 @@
 
 1. Using [this tutorial](http://swcarpentry.github.io/shell-novice/setup.html) from Software Carpentry, download [data-shell.zip](http://swcarpentry.github.io/shell-novice/data/data-shell.zip) folder and extract it to the Desktop.
 
-- **Warning**: depending on the language settings in your computer your desktop can me named differently (e.g. Plocha in Czech)
+    - **Warning**: depending on the language settings in your computer your desktop can me named differently (e.g. Plocha in Czech)
 
 **For the following questions write answer and code to produce that answer**
 
@@ -26,7 +26,10 @@
 
 10. Remove file `random_stuff.txt`
 
-11. Using pipes, write command that:
-  - Downloads [Zen of Python]()
+11. BONUS: using pipes create command that:
+    - Read `planets.txt` file in `data` directory
+    - Remove first row (header)
+    - Search for `WASP` in file
+    - Prints number of lines
 
-
+    
