@@ -1,6 +1,6 @@
 # Dash
 
-## Úvod
+## Introduction
 
 Dash je nástroj pro vytvoření interaktivních aplikaci i reportů, který kombinuje v sobě HTML prvky a markdown.
 Projekty, vytvořené v Dash lze nahrát na plotly cloud anebo na Heroku.
@@ -22,7 +22,7 @@ app.layout = html.Div(children=[
     html.H1(children='Dash'),
 
     html.Div(children='''
-        Data o Titaniku
+        Titanic data
     '''),
 
     dcc.Graph(
@@ -34,7 +34,7 @@ app.layout = html.Div(children=[
                 go.Bar(x = [1, 2, 3], y = [3, 2, 3], name = 'Southampton')
             ],
             'layout': {
-                'title': 'Nástupní místo dle třídy jizdenky'
+                'title': 'Port of embarkation'
             }
         }
     )
@@ -49,30 +49,30 @@ Pokud pojmenujete svoji aplikaci `app.py`, spustíte ji následujícím příkaz
 $ python app.py
  * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
 ```
-Vaše aplikace bude na adrese `http://127.0.0.1:8050/`
+Your application will be on following address `http://127.0.0.1:8050/`
 
-### Cvičení
+### Exercise
 
 Přidejte popisek osy x u předešlého grafu ('třída jízdenky').
 
-## Komponenty `Dash`
+## `Dash` components
 
 `Dash` obsahuje 2 hlavní typy komponentů - `dash_html_components` a `dash_core_components`.
 
-### HTML komponenty
+### HTML components
 
 `dash_html_components` obsahuje objekty pro HTML značky. V nášem případě  to jsou `html.Div()` (blokový element) a
 `html.H1()` (velký nadpis).
 
-*Poznámka*: abychom psali méně, importujeme `dash_html_components` takto: `import dash_html_components as html`
+*Note*: abychom psali méně, importujeme `dash_html_components` takto: `import dash_html_components as html`
 
-### Cvičení
+### Exercise
 
-Za velký nadpis přidejte odstavec (`html.P`) kde bude napsáno `Popis dat tady.`.
+Za velký nadpis přidejte odstavec (`html.P`) kde bude napsáno `Data description here`.
  
 
  
-## Interaktivní komponenty
+## `Dash` core components
 
 Knihovna `Dash` obsahuje funkce, které dovolují jednoduše vytvářet interaktivní objekty, například grafy, interaktivní tabulky, možnosti volby a markdown.
 
@@ -86,7 +86,7 @@ import dash_core_components as dcc
 dcc.Markdown('''
 # Dash a Markdown
 
-Dash podporuje [Markdown](http://commonmark.org/help).
+Dash supports [Markdown](http://commonmark.org/help).
 
 Markdown je jednoduchý způsob jak psát a formatovat text.
 Zahrnuje syntaxi pro **tučný text**, *kurzívu*,
@@ -95,7 +95,7 @@ citáty, atd.
 ''')
 ```
 
-### Cvičení
+### Exercise
 
 Přidejte pomocí `dcc.Markdown` do `html.Div` místo `html.P` odkaz na [dokumentaci k datům](https://www.kaggle.com/c/titanic/data).
 
@@ -137,16 +137,16 @@ dcc.RadioItems(
 Další možnosti jsou [tady](https://plot.ly/dash/dash-core-components).
 
 
-### Cvičení
+### Exercise
 
 Do své aplikace přidejte výběrové pole s možnostmi: 'Cena lístků podle třídy' a 'Věk cestujících podle třídy' (hodnoty 'fare_class' a 'age_class').
 Poté přijdete přepínač s možnostmi: 'Histogram' a 'Boxplot' (hodnoty 'hist' a 'boxplot').
 
-## Dekoratory
+## Decorators
 
 Dekorátor je funkce, která obaluje jinou funkci. V našem případě se jedná o `@app.callback`, který říká, že pokud se vstup do této funkce změní, má se zavolat funkce, která je definována níže.
 
-Tady je příklad:
+Here is an example
 
 ```python
 import dash
@@ -174,7 +174,7 @@ if __name__ == '__main__':
 ```
 Pokud napíšeme cokoliv do okénka (`dcc.Input`), změní se vstupní data do `@app.callback` (`Input(component_id='input-text', component_property='value')`). Proto se zavolá funkce a `html.Div` s id `display-text` zobrazí text, který jsme zadali do okénka, protože tak je definována funkce `update_output_div`.
  
-### Cvičení
+### Exercise
 
 Upravte výše uvedený kod:
 1. Vložte nadpis (`html.H1`) před `dcc.Input` a pojmenujte jeho id 'big-title'.
@@ -257,7 +257,7 @@ if __name__ == '__main__':
 
 ```
 
-### Cvičení
+### Exercise
 
 Upravte předchozí příklad; přidejte rozhodování na základě výběrového pole. 
 
