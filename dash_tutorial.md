@@ -263,3 +263,7 @@ Upravte předchozí příklad; přidejte rozhodování na základě výběrovéh
 
 - Pokud uživatel vybere "Cena listků podle třídy" (`fare_class`), zobrazí se histogram nebo boxplot cen lístků dle tříd - tak, jak už je v příkladu. 
 - Pokud uživatel vybere "Věk cestujících podle třídy" (`age_class`), zobrazí se histogram nebo boxplot věku cestujících dle tříd.
+
+## Deployment
+
+See [official tutorial](https://plot.ly/dash/deployment) from plotly.
