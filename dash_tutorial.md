@@ -52,6 +52,8 @@ Your application will be on following address `http://127.0.0.1:8050/`
 
 Copy example code to `app.py` file and edit it so that there is y-axis name is `passenger class`.
 
+*Note*: If you want to run example code, save it to file and then run it in terminal using following command `python filename.py`.
+
 ## `Dash` components
 
 `Dash` app can be buld from the objects contained in 2 libarries  - `dash_html_components` and `dash_core_components`.
@@ -71,9 +73,9 @@ Add paragraph(`html.P`) containing following text `Data description here` right 
  
 ## `Dash` core components
 
-`Dash` contains objects enabling easy obsahuje funkce, které dovolují jednoduše vytvářet interaktivní objekty, například grafy, interaktivní tabulky, možnosti volby a markdown.
+Using `Dash` library you can easily create interactive objects, such as plot, dropdown, date range slider and much more.
 
-Imporobjects using following code: `import dash_core_components as dcc`.
+Import library using following code: `import dash_core_components as dcc`.
 
 Instead of HTML paragraphs we can use markdown:
 
@@ -106,32 +108,32 @@ import dash_core_components as dcc
 
 dcc.Dropdown(
     options=[
-        {'label': 'Možnost A', 'value': 'val_a'},
-        {'label': 'Možnost B', 'value': 'val_b'},
+        {'label': 'Variant A', 'value': 'val_a'},
+        {'label': 'Variant B', 'value': 'val_b'},
     ],
     value='val_a'
 )
 ```
-`label` má hodnotu, která se zobrazí ne webové stránce, `value` je hodnota, která může být použitá pro rozhodování v programu.
+`label` is Name which will be displayed on the web site, `value` is option name that can be used later in code.
+In the given example `Variant A` is default value selected in dropdown
 
-*Note*: pokud chete vyzkoušet výše uvedený kód, uložte ho do samostatného souboru a spusťte pomocí příkazu `python <nazev_vaseho_souboru.py>`.
 
 
-Příklad přepínače - můžete vybrat jednu z hodnot:
+Radio item example, default selected value is `Variant 1`
 
 ```python
 import dash_core_components as dcc
 
 dcc.RadioItems(
     options=[
-        {'label': 'Tato možnost', 'value': 'variant1'},
-        {'label': 'Nebo tato', 'value': 'variant2'}
+        {'label': 'Variant 1', 'value': 'variant1'},
+        {'label': 'Variant 2', 'value': 'variant2'}
     ],
-    value='variant'
+    value='variant1'
 )
 ```
 
-Další možnosti jsou [tady](https://plot.ly/dash/dash-core-components).
+More information about library [here](https://plot.ly/dash/dash-core-components).
 
 
 ### Exercise
@@ -141,9 +143,7 @@ Poté přijdete přepínač s možnostmi: 'Histogram' a 'Boxplot' (hodnoty 'hist
 
 ## Decorators
 
-Dekorátor je funkce, která obaluje jinou funkci. V našem případě se jedná o `@app.callback`, který říká, že pokud se vstup do této funkce změní, má se zavolat funkce, která je definována níže.
-
-Here is an example
+Decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. In this tutorial, we will use `@app.callback` decorator. Whenever an input property changes (here it is `value` property of `input-text` component), the function that the callback decorator wraps (here it is `update_output_div`) will get called automatically. 
 
 ```python
 import dash
@@ -163,23 +163,23 @@ app.layout = html.Div([
     [Input(component_id='input-text', component_property='value')]
 )
 def update_output_div(input_value):
-    return 'Napsali jste "{}"'.format(input_value)
+    return 'You wrote: "{}"'.format(input_value)
 
 if __name__ == '__main__':
     app.run_server()
 
 ```
-Pokud napíšeme cokoliv do okénka (`dcc.Input`), změní se vstupní data do `@app.callback` (`Input(component_id='input-text', component_property='value')`). Proto se zavolá funkce a `html.Div` s id `display-text` zobrazí text, který jsme zadali do okénka, protože tak je definována funkce `update_output_div`.
+Whenever we write something to input window (`dcc.Input`) it fill fire `@app.callback` function (`Input(component_id='input-text', component_property='value')`), which subsequently will call `update_output_div` with updated value of parameter `input value` producing different output that will be displayed in `html.Div` with id `display-text`.
  
 ### Exercise
 
-Upravte výše uvedený kod:
-1. Vložte nadpis (`html.H1`) před `dcc.Input` a pojmenujte jeho id 'big-title'.
-2. Předělejte `@app.callback` aby aktualizoval nadpis, ne `html.Div`.
-3. Předělejte funkci `update_output_div` na `update_output_h1` aby vracela 'Zprava dne:' a text, který jste zadali.
+Edit example code:
+1. Add header (`html.H1`) before`dcc.Input` with `big-title` id
+2. Edit `@app.callback` function so that it updates header and not `html.Div`
+3. Rename `update_output_div` to `update_output_h1` to return following text 'Today's news:' and text from the input.
 
 
-## Rozhodování na základě vstupních hodnot
+## Deciding based on input values
 
 Následující kód bere jako vstupní hodnotu typ grafu vybrany uživatelem a na zakladě ní vykreslí histogram nebo boxplot.
 `update_figure` dostane jako první parametr vybranou hodnotu přepinače (její `value`). V `@app.callback` lze definovat i více vstupů, proto je `Input` zapsán jako prvek seznamu. Hodnoty `Input` dostane funkce ve stejném pořadí jako `@app.callback`.
@@ -198,7 +198,7 @@ app.layout = html.Div(children=[
     html.H1(children='Dash'),
 
     html.Div(children='''
-        Data o Titaniku
+        Titanic data
     '''),
 
     dcc.Graph(
@@ -207,8 +207,8 @@ app.layout = html.Div(children=[
     dcc.Dropdown(
         id = 'dropdown-input',
         options=[
-            {'label': 'Cena listků podle třídy', 'value': 'fare_class'},
-            {'label': 'Věk cestujících podle třídy', 'value': 'age_class'},
+            {'label': 'Ticket price based on pasengers class', 'value': 'fare_class'},
+            {'label': 'Age based on pasengers class', 'value': 'age_class'},
         ],
         value='fare_class'
     ),
@@ -232,16 +232,16 @@ def update_figure(plot_type):
     third_fare = titanic[titanic.pclass == 3].fare
 
     plot_function = go.Histogram if plot_type == 'hist' else go.Box
-    trace1 = plot_function(x = first_fare, opacity = 0.75, name = 'První třída')
-    trace2 = plot_function(x = second_fare, opacity = 0.75, name = 'Druhá třída')
-    trace3 = plot_function(x = third_fare, opacity = 0.75, name = 'Třetí třída')
+    trace1 = plot_function(x = first_fare, opacity = 0.75, name = 'First class')
+    trace2 = plot_function(x = second_fare, opacity = 0.75, name = 'Second class')
+    trace3 = plot_function(x = third_fare, opacity = 0.75, name = 'Third class')
 
     data = [trace1, trace2, trace3]
 
     figure={
         'data': data,
         'layout': {
-            'title': 'Cena jízdenky dle třídy jizdenky',
+            'title': 'Ticket price based on passenger's class',
         },
 
     }
@@ -256,10 +256,11 @@ if __name__ == '__main__':
 
 ### Exercise
 
-Upravte předchozí příklad; přidejte rozhodování na základě výběrového pole. 
+Edit following code so that different plots are shown based on dropdown value
 
-- Pokud uživatel vybere "Cena listků podle třídy" (`fare_class`), zobrazí se histogram nebo boxplot cen lístků dle tříd - tak, jak už je v příkladu. 
-- Pokud uživatel vybere "Věk cestujících podle třídy" (`age_class`), zobrazí se histogram nebo boxplot věku cestujících dle tříd.
+
+- If user selects 'Ticket price based on pasengers class' (`fare_class`), histogram or boxplot of ticket price is shown
+- If user selects 'Age based on pasengers class' (`age_class`), histogram or boxplot of age is shown
 
 ## Deployment
 
