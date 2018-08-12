@@ -2,14 +2,11 @@
 
 ## Introduction
 
-Dash je nástroj pro vytvoření interaktivních aplikaci i reportů, který kombinuje v sobě HTML prvky a markdown.
-Projekty, vytvořené v Dash lze nahrát na plotly cloud anebo na Heroku.
+Dash is python library for creating interactive visualizaiton and reports, which enables createing web application without knowing fron-end languages like HTML, CSS and JavaScript. Projects created using Dash can be then easyli deployed in cloud (e.g. Heroku).
 
-[Odkaz na tutoriály](https://plot.ly/dash/).
+[Official tutorials](https://plot.ly/dash/).
 
-Pro vytvoření applikace Dash budeme potřebovat naimportovat `dash` knihovny.
-
-Tady je úkázka jednoduché aplikace
+In order to create Dash application, we need to import `dash` libraries (`dash`, `dash_core_components`, `dash_html_components`). Here is an example of simple application:
 ```python
 import dash
 import dash_core_components as dcc
@@ -44,7 +41,7 @@ if __name__ == '__main__':
     app.run_server()
 ```
 
-Pokud pojmenujete svoji aplikaci `app.py`, spustíte ji následujícím příkazem:
+If we put code from above into file and name it `app.py`, we can run application localy by running following command in terminal:
 ```
 $ python app.py
  * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
@@ -53,55 +50,55 @@ Your application will be on following address `http://127.0.0.1:8050/`
 
 ### Exercise
 
-Přidejte popisek osy x u předešlého grafu ('třída jízdenky').
+Copy example code to `app.py` file and edit it so that there is y-axis name is `passenger class`.
 
 ## `Dash` components
 
-`Dash` obsahuje 2 hlavní typy komponentů - `dash_html_components` a `dash_core_components`.
+`Dash` app can be buld from the objects contained in 2 libarries  - `dash_html_components` and `dash_core_components`.
 
 ### HTML components
 
-`dash_html_components` obsahuje objekty pro HTML značky. V nášem případě  to jsou `html.Div()` (blokový element) a
-`html.H1()` (velký nadpis).
+`dash_html_components` contains objects wrapping different HTML tags, e.g. `html.Div()` (section element) a
+`html.H1()` (big header).
 
-*Note*: abychom psali méně, importujeme `dash_html_components` takto: `import dash_html_components as html`
+*Note*: in this tutorial we will import `dash_html_components` as abbreviation: `import dash_html_components as html`
 
 ### Exercise
 
-Za velký nadpis přidejte odstavec (`html.P`) kde bude napsáno `Data description here`.
+Add paragraph(`html.P`) containing following text `Data description here` right after header.
  
 
  
 ## `Dash` core components
 
-Knihovna `Dash` obsahuje funkce, které dovolují jednoduše vytvářet interaktivní objekty, například grafy, interaktivní tabulky, možnosti volby a markdown.
+`Dash` contains objects enabling easy obsahuje funkce, které dovolují jednoduše vytvářet interaktivní objekty, například grafy, interaktivní tabulky, možnosti volby a markdown.
 
-Importujeme tyto funkce následně: `import dash_core_components as dcc`.
+Imporobjects using following code: `import dash_core_components as dcc`.
 
-Místo html můžeme používat markdown (značkovací jazyk):
+Instead of HTML paragraphs we can use markdown:
 
 ```python
 import dash_core_components as dcc
 
 dcc.Markdown('''
-# Dash a Markdown
+#### Dash and Markdown
 
 Dash supports [Markdown](http://commonmark.org/help).
 
-Markdown je jednoduchý způsob jak psát a formatovat text.
-Zahrnuje syntaxi pro **tučný text**, *kurzívu*,
-[odkaz](http://commonmark.org/help), vnořený `kód`, seznamy,
-citáty, atd.
+Markdown is a simple way to write and format text.
+It includes a syntax for things like **bold text** and *italics*,
+[links](http://commonmark.org/help), inline `code` snippets, lists,
+quotes, and more.
 ''')
 ```
 
 ### Exercise
 
-Přidejte pomocí `dcc.Markdown` do `html.Div` místo `html.P` odkaz na [dokumentaci k datům](https://www.kaggle.com/c/titanic/data).
+Using `dcc.Markdown` add link to [data description](https://www.kaggle.com/c/titanic/data) to `html.Div`, delete `html.P`.
 
-### Výber z hodnot
+### Dropdown
 
-Tady je příklad vytvoření výběrového pole
+Here is example of dropdown
 
 ```python
 import dash_core_components as dcc
@@ -117,7 +114,7 @@ dcc.Dropdown(
 ```
 `label` má hodnotu, která se zobrazí ne webové stránce, `value` je hodnota, která může být použitá pro rozhodování v programu.
 
-*Poznámka*: pokud chete vyzkoušet výše uvedený kód, uložte ho do samostatného souboru a spusťte pomocí příkazu `python <nazev_vaseho_souboru.py>`.
+*Note*: pokud chete vyzkoušet výše uvedený kód, uložte ho do samostatného souboru a spusťte pomocí příkazu `python <nazev_vaseho_souboru.py>`.
 
 
 Příklad přepínače - můžete vybrat jednu z hodnot:
