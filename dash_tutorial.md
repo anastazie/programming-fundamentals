@@ -138,8 +138,8 @@ More information about library [here](https://plot.ly/dash/dash-core-components)
 
 ### Exercise
 
-Do své aplikace přidejte výběrové pole s možnostmi: 'Cena lístků podle třídy' a 'Věk cestujících podle třídy' (hodnoty 'fare_class' a 'age_class').
-Poté přijdete přepínač s možnostmi: 'Histogram' a 'Boxplot' (hodnoty 'hist' a 'boxplot').
+Add to your appliaction code dropdown menu with following options: 'Ticket price by pasengers class' and 'Age by pasengers class', (values 'fare_class' and 'age_class', respectively).
+Then add radio button with following labels: 'Histogram' and 'Boxplot' (values'hist' and 'boxplot', respectively).
 
 ## Decorators
 
@@ -181,8 +181,8 @@ Edit example code:
 
 ## Deciding based on input values
 
-Následující kód bere jako vstupní hodnotu typ grafu vybrany uživatelem a na zakladě ní vykreslí histogram nebo boxplot.
-`update_figure` dostane jako první parametr vybranou hodnotu přepinače (její `value`). V `@app.callback` lze definovat i více vstupů, proto je `Input` zapsán jako prvek seznamu. Hodnoty `Input` dostane funkce ve stejném pořadí jako `@app.callback`.
+Following code takes plot type as an input value and based on selected value will show either histogram or boxplot.
+`update_figure` function will get selected radio button value as first parameter. In `@app.callback` multiple inputs can be defined (that is why inputs are in list) and only one Output. Decorated function will get parameters in teh same order as inputs were defined in `app.callback`.
 
 ```python
 import dash
@@ -207,8 +207,8 @@ app.layout = html.Div(children=[
     dcc.Dropdown(
         id = 'dropdown-input',
         options=[
-            {'label': 'Ticket price based on pasengers class', 'value': 'fare_class'},
-            {'label': 'Age based on pasengers class', 'value': 'age_class'},
+            {'label': 'Ticket price by pasengers class', 'value': 'fare_class'},
+            {'label': 'Age by pasengers class', 'value': 'age_class'},
         ],
         value='fare_class'
     ),
@@ -259,8 +259,8 @@ if __name__ == '__main__':
 Edit following code so that different plots are shown based on dropdown value
 
 
-- If user selects 'Ticket price based on pasengers class' (`fare_class`), histogram or boxplot of ticket price is shown
-- If user selects 'Age based on pasengers class' (`age_class`), histogram or boxplot of age is shown
+- If user selects 'Ticket price by pasengers class' (`fare_class`), histogram or boxplot of ticket price is shown
+- If user selects 'Age by pasengers class' (`age_class`), histogram or boxplot of age is shown
 
 ## Deployment
 
