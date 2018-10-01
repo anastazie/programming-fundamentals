@@ -20,7 +20,7 @@ This tool emulates UNIX terminal.
     - **Double check that Python is added to the PATH environmental variable**
 
 #### Python libraries
-1. Clone this repository `git clone git@github.com:anastazie/dash-pycon-2018.git` or `git clone https://github.com/anastazie/dash-pycon-2018.git`
+1. Clone this repository `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
 
 1. Install dependencies located in `requirements.txt` using following command in GitBash: `pip3 install -r requirements.txt`
 
@@ -43,7 +43,7 @@ You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) 
 
 ## Testing installation
 
-1. Clone this repository `git clone git@github.com:anastazie/dash-pycon-2018.git` or `git clone https://github.com/anastazie/dash-pycon-2018.git`
+1. Clone this repository `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
 1. In your terminal:
     ```
     cd programming-fundamentals
