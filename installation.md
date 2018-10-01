@@ -22,7 +22,7 @@ This tool emulates UNIX terminal.
 
 #### 4. Python libraries
 1. Clone this repository using one of the following command in your terminal `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
-
+1. Install pandas by using following command in the terminal: `pip3 install pandas`
 1. Install dependencies located in `requirements.txt` using following command in GitBash: `pip3 install -r requirements.txt`
 
 ### Linux, Mac OS
@@ -41,7 +41,8 @@ You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) 
 #### 3. Python libraries
 
 1. Clone this repository using one of the following command in your terminal `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
-2. Use following command in your terminal: `pip3 install -r requirements.txt`
+2. Install pandas by using following command in the terminal: `pip3 install pandas`
+3. Use following command in your terminal: `pip3 install -r requirements.txt`
 
 
 
@@ -50,6 +51,18 @@ You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) 
 1. In your terminal use following commands:
     ```
     cd programming-fundamentals
-    python3 app.py
+    python app.py
     ```
-If you are able to see running application it means that installation was successful :)
+    *Note: use `python3 app.py` if you have multiple python versions.*
+    
+    You should see similar output in your terminal
+    ```
+   * Serving Flask app "app" (lazy loading)
+   * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+   * Debug mode: off
+   * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
+    ```
+2. In you browser type following address: `http://127.0.0.1:8050/`. You should see barplot.
+
