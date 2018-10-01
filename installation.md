@@ -21,7 +21,7 @@ This tool emulates UNIX terminal.
     - In case if you forgot to do that check out [this tutorial](https://anthonydebarros.com/2018/06/21/setting-up-python-in-windows-10/).
 
 #### 4. Python libraries
-1. Clone this repository using one of the following command in your terminal `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
+1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
 1. Install pandas by using following command in the terminal: `pip3 install pandas`
 1. Install dependencies located in `requirements.txt` using following command in GitBash: `pip3 install -r requirements.txt`
 
@@ -40,7 +40,7 @@ You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) 
 
 #### 3. Python libraries
 
-1. Clone this repository using one of the following command in your terminal `git clone git@github.com:anastazie/programming-fundamentals.git` or `git clone https://github.com/anastazie/programming-fundamentals.git`
+1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
 2. Install pandas by using following command in the terminal: `pip3 install pandas`
 3. Use following command in your terminal: `pip3 install -r requirements.txt`
 
