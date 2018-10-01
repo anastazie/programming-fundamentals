@@ -18,7 +18,8 @@ This tool emulates UNIX terminal.
 
 1. Install Python via [Python download site](https://www.python.org/downloads/).
     - **Double check that Python is added to the PATH environmental variable**
-    - In case if you forgot to do that check out [this tutorial](https://anthonydebarros.com/2018/06/21/setting-up-python-in-windows-10/).
+    - In case if you forgot to do so that check out [this tutorial](https://anthonydebarros.com/2018/06/21/setting-up-python-in-windows-10/)
+    - **Click on `Disable path length limit`**
 
 #### 4. Python libraries
 1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
