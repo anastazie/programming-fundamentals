@@ -27,7 +27,7 @@
 10. Remove file `random_stuff.txt`. What command will you use?
 
 11. BONUS: using pipes create command that:
-    - Read `planets.txt` file in `data` directory
+    - Read `data-shell/data/planets.txt` file
     - Search for `WASP` in file
     - Sort by second column in descending order
     - Print first 5 lines
