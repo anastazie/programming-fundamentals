@@ -1,6 +1,6 @@
 ## Installation
 
-*Note:* Python 3.6 or higher can be used for this workshop.
+*Note:* Python 3.6 or higher can be used for this course.
 
 ### Windows
 
@@ -20,11 +20,18 @@ This tool emulates UNIX terminal.
     - **Double check that Python is added to the PATH environmental variable**
     - In case if you forgot to do so that check out [this tutorial](https://anthonydebarros.com/2018/06/21/setting-up-python-in-windows-10/)
     - **Click on `Disable path length limit`**
+2. Check Python installation
+    - In GitBash type `which python`, you should see something like this:
+    `/c/Users/IEUser/AppData/Local/Programs/Python/Python37-32/python`
 
 #### 4. Python libraries
 1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
-1. Install pandas by using following command in the terminal: `pip3 install pandas`
-1. Install dependencies located in `requirements.txt` using following command in GitBash: `pip3 install -r requirements.txt`
+1. Install several libraries separately by using following commands in the terminal: 
+    ```
+    pip3 install pandas
+    pip install pyzmq
+    ```
+1. To install remaining libraries that are located in `requirements.txt` use following command in GitBash: `pip3 install -r requirements.txt`
 
 ### Linux, Mac OS
 
@@ -38,12 +45,19 @@ You can use [Atom](https://atom.io), [Sublime Text](http://www.sublimetext.com) 
     `brew install python3`
     
     *Note:* if you do not have `brew`, install it using [this](https://brew.sh/) tutorial.
+1. Check Python installation
+    - In terminal type `which python` (or `which python3` if you have multiple python versions), you should see something like this:
+    `/usr/local/bin/python3`
 
 #### 3. Python libraries
 
 1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
-1. Install pandas by using following command in the terminal: `pip3 install pandas`
-1. Use following command in your terminal: `pip3 install -r requirements.txt`
+1. Install several libraries separately by using following commands in the terminal: 
+    ```
+    pip3 install pandas
+    pip install pyzmq
+    ```
+1. To install remaining libraries that are located in `requirements.txt` use following command in your terminal: `pip3 install -r requirements.txt`
 
 
 
