@@ -28,8 +28,8 @@
 
 11. BONUS: using pipes create command that:
     - Read `planets.txt` file in `data` directory
-    - Remove first row (header)
     - Search for `WASP` in file
-    - Prints number of lines
+    - Sort by second column in descending order
+    - Print first 5 lines
 
     
