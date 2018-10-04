@@ -26,6 +26,11 @@ This tool emulates UNIX terminal.
 
 #### 4. Python libraries
 1. Clone this repository using one of the following command in your terminal `git clone https://github.com/anastazie/programming-fundamentals.git`
+
+1. Go to the project directory
+    ```
+    cd programming-fundamentals
+    ```
 1. Install several libraries separately by using following commands in the terminal: 
     ```
     pip3 install pandas
