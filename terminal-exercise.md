@@ -22,7 +22,7 @@
 
 8. Create empty file and name it `random_stuff.txt`. What command will you use?
 
-9. Print to the file created in previous file output of `ls -l` of current directory. What do you see when you open that file ?
+9. Print the output of `ls -l` of current directory into the file created in previous step. What do you see when you open that file?
 
 10. Remove file `random_stuff.txt`. What command will you use?
 
