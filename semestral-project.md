@@ -1,7 +1,7 @@
 # Semestral project
 
 
-1. Select data from [this list](http://vincentarelbundock.github.io/Rdatasets/datasets.html). 
+1. Select data from [this list](http://vincentarelbundock.github.io/Rdatasets/datasets.html) or any other source (e.g [kaggle](https://www.kaggle.com/datasets)). 
   **Note: data must have at least 100 rows and 5 columns.**
 1. Get to know your data and think about ways to visualize your data.
 1. Analyze your data using [`pandas`](https://pandas.pydata.org) and make plots using [`plotly`](https://plot.ly/python/).
@@ -12,4 +12,4 @@
         3. User can select plot using interactive elements, e.g. dropdown, radio button ([`dash_core_components.Dropdown`](https://plot.ly/dash/dash-core-components/dropdown),
         [`dash_core_components.RadioItem`](https://plot.ly/dash/dash-core-components/radioitems))
     1. Deplot application on [Heroku](https://github.com/anastazie/pyladies_data/blob/master/dash_app_deployment.md)
-1. You will have approx. 5 minutes defend your project in front of other students.
+1. You will have to create report describing data preparation, data itself and application.
