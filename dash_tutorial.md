@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Dash is python library for creating interactive visualizaiton and reports, which enables createing web application without knowing fron-end languages like HTML, CSS and JavaScript. Projects created using Dash can be then easyli deployed in cloud (e.g. Heroku).
+Dash is python library for creating interactive visualizaiton and reports, which enables creating web application without knowing front-end languages like HTML, CSS and JavaScript. Projects created using Dash can be then easily deployed in cloud (e.g. Heroku).
 
 [Official tutorials](https://plot.ly/dash/).
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     app.run_server()
 ```
 
-If we put code from above into file and name it `app.py`, we can run application localy by running following command in terminal:
+If we put code from above into file and name it `app.py`, we can run application locally by running following command in terminal:
 ```
 $ python app.py
  * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
@@ -56,7 +56,7 @@ Copy example code to `app.py` file and edit it so that there is y-axis name is `
 
 ## `Dash` components
 
-`Dash` app can be buld from the objects contained in 2 libarries  - `dash_html_components` and `dash_core_components`.
+`Dash` app can be build from the objects contained in 2 libraries  - `dash_html_components` and `dash_core_components`.
 
 ### HTML components
 
@@ -68,9 +68,9 @@ Copy example code to `app.py` file and edit it so that there is y-axis name is `
 ### Exercise
 
 Add paragraph(`html.P`) containing following text `Data description here` right after header.
- 
 
- 
+
+
 ## `Dash` core components
 
 Using `Dash` library you can easily create interactive objects, such as plot, dropdown, date range slider and much more.
@@ -138,12 +138,12 @@ More information about library [here](https://plot.ly/dash/dash-core-components)
 
 ### Exercise
 
-Add to your appliaction code dropdown menu with following options: 'Ticket price by pasengers class' and 'Age by pasengers class', (values 'fare_class' and 'age_class', respectively).
-Then add radio button with following labels: 'Histogram' and 'Boxplot' (values'hist' and 'boxplot', respectively).
+Add to your application code dropdown menu with following options: 'Ticket price by passengers class' and 'Age by passengers class', (values 'fare_class' and 'age_class', respectively).
+Then add radio button with following labels: 'Histogram' and 'Boxplot' (values 'hist' and 'boxplot', respectively).
 
 ## Decorators
 
-Decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. In this tutorial, we will use `@app.callback` decorator. Whenever an input property changes (here it is `value` property of `input-text` component), the function that the callback decorator wraps (here it is `update_output_div`) will get called automatically. 
+Decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. In this tutorial, we will use `@app.callback` decorator. Whenever an input property changes (here it is `value` property of `input-text` component), the function that the callback decorator wraps (here it is `update_output_div`) will get called automatically.
 
 ```python
 import dash
@@ -170,11 +170,11 @@ if __name__ == '__main__':
 
 ```
 Whenever we write something to input window (`dcc.Input`) it fill fire `@app.callback` function (`Input(component_id='input-text', component_property='value')`), which subsequently will call `update_output_div` with updated value of parameter `input value` producing different output that will be displayed in `html.Div` with id `display-text`.
- 
+
 ### Exercise
 
 Edit example code:
-1. Add header (`html.H1`) before`dcc.Input` with `big-title` id
+1. Add header (`html.H1`) before `dcc.Input` with `big-title` id
 2. Edit `@app.callback` function so that it updates header and not `html.Div`
 3. Rename `update_output_div` to `update_output_h1` to return following text 'Today's news:' and text from the input.
 
@@ -182,7 +182,7 @@ Edit example code:
 ## Deciding based on input values
 
 Following code takes plot type as an input value and based on selected value will show either histogram or boxplot.
-`update_figure` function will get selected radio button value as first parameter. In `@app.callback` multiple inputs can be defined (that is why inputs are in list) and only one Output. Decorated function will get parameters in teh same order as inputs were defined in `app.callback`.
+`update_figure` function will get selected radio button value as first parameter. In `@app.callback` multiple inputs can be defined (that is why inputs are in list) and only one Output. Decorated function will get parameters in the same order as inputs were defined in `app.callback`.
 
 ```python
 import dash
@@ -207,8 +207,8 @@ app.layout = html.Div(children=[
     dcc.Dropdown(
         id = 'dropdown-input',
         options=[
-            {'label': 'Ticket price by pasengers class', 'value': 'fare_class'},
-            {'label': 'Age by pasengers class', 'value': 'age_class'},
+            {'label': 'Ticket price by passengers class', 'value': 'fare_class'},
+            {'label': 'Age by passengers class', 'value': 'age_class'},
         ],
         value='fare_class'
     ),
@@ -259,8 +259,8 @@ if __name__ == '__main__':
 Edit following code so that different plots are shown based on dropdown value
 
 
-- If user selects 'Ticket price by pasengers class' (`fare_class`), histogram or boxplot of ticket price is shown
-- If user selects 'Age by pasengers class' (`age_class`), histogram or boxplot of age is shown
+- If user selects 'Ticket price by passengers class' (`fare_class`), histogram or boxplot of ticket price is shown
+- If user selects 'Age by passengers class' (`age_class`), histogram or boxplot of age is shown
 
 ## Deployment
 
