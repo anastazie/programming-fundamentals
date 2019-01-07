@@ -50,7 +50,7 @@ Your application will be on following address `http://127.0.0.1:8050/`
 
 ### Exercise
 
-Copy example code to `app.py` file and edit it so that there is y-axis name is `passenger class`.
+Copy example code to `app.py` file and edit it so that there is x-axis name is `passenger class` and y-axis name is `number of passengers`.
 
 *Note*: If you want to run example code, save it to file and then run it in terminal using following command `python filename.py`.
 
