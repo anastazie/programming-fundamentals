@@ -202,10 +202,6 @@ app.layout = html.Div(children=[
     html.Div(children='''
         Titanic data
     '''),
-
-    dcc.Graph(
-        id='example-graph',
-    ),
     dcc.Dropdown(
         id = 'dropdown-input',
         options=[
@@ -221,6 +217,9 @@ app.layout = html.Div(children=[
         ],
         value='hist',
         id='radio-input'
+    ),
+    dcc.Graph(
+        id='example-graph',
     )
 ])
 
@@ -243,7 +242,7 @@ def update_figure(plot_type):
     figure={
         'data': data,
         'layout': {
-            'title': 'Ticket price based on passenger's class',
+            'title': "Ticket price based on passenger's class",
         },
 
     }
@@ -252,7 +251,7 @@ def update_figure(plot_type):
 
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
 
 ```
 
