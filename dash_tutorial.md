@@ -271,3 +271,6 @@ Edit following code so that different plots are shown based on dropdown value
 ## Deployment
 
 See [official tutorial](https://plot.ly/dash/deployment) from plotly.
+
+*Notes on installation for Windows:*
+- Do not install `gunicorn`, it works only on UNIX systems.
