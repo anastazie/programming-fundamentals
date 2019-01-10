@@ -192,6 +192,8 @@ import dash_html_components as html
 import pandas as pd
 import plotly.graph_objs as go
 
+titanic = pd.read_excel('http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.xls')
+
 app = dash.Dash()
 
 app.layout = html.Div(children=[
@@ -247,7 +249,7 @@ def update_figure(plot_type):
     }
     return figure
 
-titanic = pd.read_excel('http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.xls')
+
 
 if __name__ == '__main__':
     app.run_server()
