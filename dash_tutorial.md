@@ -50,7 +50,7 @@ Your application will be on following address `http://127.0.0.1:8050/`
 
 ### Exercise
 
-Copy example code to `app.py` file and edit it so that there is y-axis name is `passenger class`.
+Copy example code to `app.py` file and edit it so that there is x-axis name is `passenger class` and y-axis name is `number of passengers`.
 
 *Note*: If you want to run example code, save it to file and then run it in terminal using following command `python filename.py`.
 
@@ -192,6 +192,8 @@ import dash_html_components as html
 import pandas as pd
 import plotly.graph_objs as go
 
+titanic = pd.read_excel('http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.xls')
+
 app = dash.Dash()
 
 app.layout = html.Div(children=[
@@ -200,10 +202,6 @@ app.layout = html.Div(children=[
     html.Div(children='''
         Titanic data
     '''),
-
-    dcc.Graph(
-        id='example-graph',
-    ),
     dcc.Dropdown(
         id = 'dropdown-input',
         options=[
@@ -219,6 +217,9 @@ app.layout = html.Div(children=[
         ],
         value='hist',
         id='radio-input'
+    ),
+    dcc.Graph(
+        id='example-graph',
     )
 ])
 
@@ -227,30 +228,35 @@ app.layout = html.Div(children=[
     [Input(component_id='radio-input', component_property='value')]
 )
 def update_figure(plot_type):
-    first_fare = titanic[titanic.pclass == 1].fare
-    second_fare = titanic[titanic.pclass == 2].fare
-    third_fare = titanic[titanic.pclass == 3].fare
+    first = titanic[titanic.pclass == 1].fare
+    second = titanic[titanic.pclass == 2].fare
+    third = titanic[titanic.pclass == 3].fare
+    title = "Ticket price based on passenger's class"
 
-    plot_function = go.Histogram if plot_type == 'hist' else go.Box
-    trace1 = plot_function(x = first_fare, opacity = 0.75, name = 'First class')
-    trace2 = plot_function(x = second_fare, opacity = 0.75, name = 'Second class')
-    trace3 = plot_function(x = third_fare, opacity = 0.75, name = 'Third class')
+    if plot_type == 'hist':
+        plot_function = go.Histogram
+    else:
+        plot_function = go.Box
+
+    trace1 = plot_function(x = first, opacity = 0.75, name = 'First class')
+    trace2 = plot_function(x = second, opacity = 0.75, name = 'Second class')
+    trace3 = plot_function(x = third, opacity = 0.75, name = 'Third class')
 
     data = [trace1, trace2, trace3]
 
     figure={
         'data': data,
         'layout': {
-            'title': 'Ticket price based on passenger's class',
+            'title': title,
         },
 
     }
     return figure
 
-titanic = pd.read_excel('http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.xls')
+
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
 
 ```
 
@@ -265,3 +271,7 @@ Edit following code so that different plots are shown based on dropdown value
 ## Deployment
 
 See [official tutorial](https://plot.ly/dash/deployment) from plotly.
+
+*Notes on installation:*
+- Register on [Heroku](https://www.heroku.com/)
+- Windows: Do not install `gunicorn`, it works only on UNIX systems.
